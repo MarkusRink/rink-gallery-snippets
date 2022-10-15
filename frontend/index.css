@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'IBM Plex Mono', source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: "Glacial Indifference", sans-serif;
+  src: local("Glacial Indifference"),
+    url("./fonts/GlacialIndifference-Regular.woff2") format("woff2"),
+    url("./fonts/glacialindifference-regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Vollkorn";
+  src: local("Vollkorn"),
+    url("./fonts/Vollkorn-Regular.woff2") format("woff2"),
+    url("./fonts/Vollkorn-Regular.ttf") format("opentype");
+}

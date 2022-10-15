@@ -1,0 +1,16 @@
+type Note {
+    uri: String,
+    title: String, 
+    content: String,
+    date: String
+}
+
+type NoteUri {
+    uri: String,
+    title: String}
+
+type Query {
+    getNoteListing: [Note],
+    getNote(uri: String!): Note,
+    getLatestNote: Note
+}

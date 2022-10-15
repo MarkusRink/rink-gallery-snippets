@@ -1,0 +1,78 @@
+@import 'GlobalVars.sass'
+    
+.nav_general 
+    display: block
+    margin-left: 1em
+    padding: 0
+    padding-right: 1em
+    @media ( min-width: 900px)
+        float: right
+    @include font_mono     
+    font-size: 14pt
+    @media screen and (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)
+        font-size: 12pt
+    font-weight: 500
+    text-align: end
+        
+    color: rgba(20, 20, 20, 1)
+    -webkit-font-smoothing: antialiased
+    border-right: black solid 2px
+    & > li 
+        list-style-type: none
+        padding-bottom: 1em
+        @media  (min-resolution: 192dpi) and (max-width: 1000), (max-width: 600px)
+            padding-bottom: 0.25em
+
+.nav_general ul
+    list-style: none
+    text-decoration: none
+    color: black
+
+.nav_general a 
+    text-decoration: none
+    color: rgba(20, 20, 20, 1)
+    
+
+.nav_general a:hover 
+    text-decoration: underline blue
+    &::before
+        display: none
+
+.nav_general button
+    background: none
+    border: none
+    padding: 0
+    font: inherit
+    outline: inherit
+    cursor: pointer
+
+.nav_tree //this is a ul element
+    position: relative
+    padding-right: 0.5em
+    padding-left: 0
+    text-align: left
+    li 
+        border-right: 1px black solid 
+        div 
+            
+            padding-right: 1em 
+            position: relative
+            font-weight: 300
+
+            &::after
+                content: ''
+                position: absolute
+                top: 0
+                right: -1px
+                bottom: 45%
+                width: 0.75em
+                border-right: 1px black solid
+                border-bottom: 1px black solid
+        
+            a.selected::before
+                content: "_"
+                position: absolute
+
+    &> li:last-child
+        border-right: 1px solid transparent
+    

@@ -1,0 +1,62 @@
+@use "GlobalVars"
+
+$breakpoints-xs: 480px
+$breakpoint-s: 667px
+$breakpoint-m: 1024px
+$breakpoint-l: 1280px
+$breakpoint-xl: 1680px
+
+
+.header
+    margin: 2vw 0 0 0
+    display: grid
+    grid-template-columns: repeat(10, 1fr)
+    grid-template-rows: repeat(4, fit-content())
+    @include GlobalVars.font_display
+    font-size: 30pt
+    @media screen and (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)
+        font-size: 18pt
+    @media screen and (-webkit-min-device-pixel-ratio: 2) and ( min-width: $breakpoint-m),  (min-resolution: 192dpi) and ( min-width:  $breakpoint-m)
+        font-size: 22pt
+    @media screen and ( max-width:  $breakpoint-l)
+        //font-size: 16pt
+    
+
+    &_blackbox
+        grid-column: 1/3
+        grid-row: 1/3
+        background-color: black
+        width: 100%
+        height: 100%
+        display: block
+
+    &_text
+        grid-row: 1
+        grid-column: 3/-1
+        margin: 0 0 0 10px
+
+    &_thought
+        grid-row: 2
+        grid-column: 3/-1
+        font-size: 10pt
+        margin: 0 0 0 10px
+
+    &_greeting
+        grid-row: 3
+        grid-column: 2/-3
+        margin: auto 0 auto 0
+        @media  (min-resolution: 192dpi) and (max-width: 1000), (max-width: 600px)
+            padding-top: 1em
+
+    .menu_position
+        grid-row: 3
+        grid-column: -1/-4
+        @media  (min-resolution: 192dpi) and (max-width: 1000), (max-width: 600px)
+            grid-row: 4
+            grid-column: 1/-1
+
+
+        
+    
+
+

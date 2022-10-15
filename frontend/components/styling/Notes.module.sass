@@ -1,0 +1,100 @@
+@use "GlobalVars"
+
+$highlight: rgba(241, 255, 38, 0.562)//#c2e9ed
+$text-color: #333
+
+.container
+    background-color: #ffffff
+    color: $text-color
+
+.article
+    color: $text-color
+    margin: 0 auto
+    margin-bottom: 25vh
+    font-size: 18px
+    line-height: 1.5625
+    width: 80%
+    @include GlobalVars.font_sans_serif
+    @media (min-width: 860px)
+        font-size: 20px
+        line-height: 1.5
+    @media (min-width: 1300px)
+        font-size: 24px
+        line-height: 1.5
+        width: 1000px
+    @media screen and (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)
+        font-size: 16px
+
+    p
+        margin-bottom: 1rem
+        margin-top: 0
+
+    h1, h2, h3, h4, h5
+        @include GlobalVars.font_serif
+        font-weight: normal
+        margin: 0
+
+    h2, h3, h4, h5
+        &::before
+            content: ''
+            width: 0.9ex
+            height: 0.9ex
+            background: #333333
+            display: inline-block
+            margin-right: 0.5ex
+    h1 
+        font-size: 36px
+        margin-top: 3.5rem
+        margin-left: -1ex
+        @media (min-width: 860px)
+            font-size: 40px
+        @media (min-width: 1300px)
+            font-size: 48px
+        @media screen and (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)
+            margin-top: 1rem
+    h2
+        margin-top: 1rem
+        
+    a
+        color: $text-color
+        //padding: 1em 1.5em
+        //position: relative
+        text-decoration: none
+        box-shadow: inset 0 -0.3em 0 $highlight
+        //transition: background 0.5s linear 0.5s
+        //transition: box-shadow 0.5s linear 0s
+
+        &:hover, &:active
+            background: $highlight
+            box-shadow: inset 0 0 0 $highlight
+        
+
+        
+        
+    blockquote
+        @include GlobalVars.font_serif
+        margin-left: 0
+        margin-right: 0
+        border-left: solid 1px gray
+        padding-left: 1em
+    ul, ol 
+        margin-top: 0    
+    ul
+        list-style: square
+    li
+        list-style: inherit
+
+.date
+    @media (max-width: 500px)
+        display: none
+    @include GlobalVars.font_mono
+    font-size: 1rem
+    font-weight: lighter
+    position: absolute
+    margin: 0
+    @media (min-width: 900px)
+        margin-top: 1rem    
+    margin-top:3.4rem
+    margin-left: auto
+    margin-right: auto
+    writing-mode: vertical-rl
